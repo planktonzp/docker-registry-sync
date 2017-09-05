@@ -26,7 +26,7 @@ def compare_v2(registry1, registry2):
     for img in sorted(d_imgs1.keys()):
         if img in d_imgs2:
             # IMG which need pull
-            pull_img[img] = [set(d_imgs1[img]) - set(d_imgs2[img])]
+            pull_img[img] = sorted(set(d_imgs1[img]) - set(d_imgs2[img]))
             # IMG which need del
             # del_list = set(d_imgs2[img]) - set(d_imgs1[img])
     return pull_img
